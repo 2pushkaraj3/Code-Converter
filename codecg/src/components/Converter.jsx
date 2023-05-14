@@ -83,7 +83,7 @@ const Converter = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": apiKey
         
       },
       body: JSON.stringify(apiRequestBody)
