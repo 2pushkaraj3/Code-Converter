@@ -7,7 +7,18 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 
-const API_KEY = "Bearer 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";
+// const API_KEY = "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";
+// const API_KEY1 ="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";
+
+import { Configuration, OpenAIApi } from "openai";
+const configuration = new Configuration({
+    organization: "org-OLEaWfNfL1iuU6zPUoyu7Ju7",
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.listEngines();
+
+
 
 
 const systemMessage = { 
@@ -71,8 +82,9 @@ const Converter = () => {
     {
       method: "POST",
       headers: {
-        "Authorization": API_KEY,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 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"
+        
       },
       body: JSON.stringify(apiRequestBody)
     }).then((data) => {
