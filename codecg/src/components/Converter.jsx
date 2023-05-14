@@ -7,7 +7,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 
-const API_KEY = "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";
+const API_KEY = "Bearer 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";
 
 
 const systemMessage = { 
@@ -71,7 +71,7 @@ const Converter = () => {
     {
       method: "POST",
       headers: {
-        "Authorization": "Bearer " + API_KEY,
+        "Authorization": API_KEY,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(apiRequestBody)
